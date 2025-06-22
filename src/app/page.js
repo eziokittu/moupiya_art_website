@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -36,14 +37,19 @@ export default function Home() {
       <section>
         <h2 className="text-3xl font-bold text-gray-800 mb-8">Browse by Category</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {['Digital Art', 'Traditional Art', 'Sketches', 'Other'].map((category) => (
-            <a
-              key={category}
-              href={`/gallery?category=${category.toLowerCase().replace(' ', '-')}`}
-              className="p-6 text-center bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow"
+          {[
+            { name: 'Digital Art', href: '/category/digital-art' },
+            { name: 'Traditional Art', href: '/category/traditional-art' },
+            { name: 'Sketches', href: '/category/sketches' },
+            { name: 'Other', href: '/category/other' }
+          ].map((category) => (
+            <Link
+              key={category.name}
+              href={category.href}
+              className="p-6 text-center bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow block"
             >
-              <h3 className="text-xl font-semibold text-gray-800">{category}</h3>
-            </a>
+              <h3 className="text-xl font-semibold text-gray-800">{category.name}</h3>
+            </Link>
           ))}
         </div>
       </section>

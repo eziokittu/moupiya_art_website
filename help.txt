@@ -1,0 +1,16 @@
+meowpiya art gallery -
+
+objectives - 
+cute UI interface
+backend for user login and authentication
+bakend CRUD for realtime adding of new images / reels / videos ...
+
+optional - 
+payment gateway
+comment system
+
+tech stack -
+next js
+cloudinary
+
+password - southpoint19 

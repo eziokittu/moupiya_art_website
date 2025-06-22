@@ -11,6 +11,16 @@ export async function getImages(filter = {}) {
   }
 }
 
+export async function getImageById(id) {
+  try {
+    await connectDB();
+    return await Image.findById(id);
+  } catch (error) {
+    console.error('Error fetching image by ID:', error);
+    throw error;
+  }
+}
+
 export async function createImage(imageData) {
   try {
     await connectDB();
